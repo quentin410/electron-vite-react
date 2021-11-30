@@ -1,0 +1,46 @@
+{
+  "schema": {
+    "displayType": "row",
+    "showDescIcon": true,
+    "labelWidth": 120,
+    "type": "object",
+    "ui:displayType": "row",
+    "ui:showDescIcon": true,
+    "properties": {
+      "title": {
+        "title": "PI",
+        "type": "string",
+        "required": true,
+        "ui:options": {},
+        "placeholder": "请选择PI",
+        "widget": "select",
+        "props": {
+          "showSearch": true
+        }
+      },
+      "mock": {
+        "title": "Mock数据",
+        "type": "string",
+        "required": true,
+        "ui:options": {},
+        "placeholder": "请输入mock数据",
+        "widget": "textarea"
+      },
+      "modules": {
+        "title": "模块",
+        "type": "string",
+        "required": true,
+        "ui:options": {},
+        "placeholder": "请输入mock数据",
+        "widget": "select",
+        "props": {
+          "showSearch": true,
+          "mode": "multiple"
+        }
+      }
+    }
+  },
+  "displayType": "row",
+  "showDescIcon": true,
+  "labelWidth": 120
+}

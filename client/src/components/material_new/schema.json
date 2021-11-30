@@ -1,0 +1,56 @@
+{
+  "schema": {
+    "displayType": "row",
+    "showDescIcon": true,
+    "labelWidth": 120,
+    "type": "object",
+    "ui:displayType": "row",
+    "ui:showDescIcon": true,
+    "properties": {
+      "title": {
+        "title": "标题",
+        "type": "string",
+        "required": true,
+        "ui:options": {},
+        "placeholder": "请输入标题"
+      },
+      "type": {
+        "title": "类型",
+        "type": "string",
+        "enum": [
+          "0",
+          "1"
+        ],
+        "enumNames": [
+          "模块",
+          "PI"
+        ],
+        "default": "0"
+      },
+      "material_key": {
+        "required": true,
+        "title": "唯一标识",
+        "type": "string",
+        "ui:options": {},
+        "placeholder": "请输入唯一标识"
+      },
+      "description": {
+        "title": "描述",
+        "type": "string",
+        "ui:options": {},
+        "placeholder": "请输入描述"
+      },
+      "screenshot": {
+        "title": "截图",
+        "type": "string",
+        "ui:options": {},
+        "description": "",
+        "default": "",
+        "placeholder": "请输入截图地址"
+      }
+    }
+  },
+  "displayType": "row",
+  "showDescIcon": true,
+  "labelWidth": 120
+}
