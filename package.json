@@ -77,7 +77,7 @@
     "compression": "maximum",
     "publish": [
       {
-        "provider": "generic",
+        "provider": "generic"
       }
     ],
     "dmg": {
