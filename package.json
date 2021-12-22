@@ -10,7 +10,8 @@
     "clientStart": "cd client && npm run clientStart",
     "clientBuild": "cd client && npm run build",
     "buildMac": "npm run clientBuild  && tsc && electron-builder build --mac",
-    "justbuildForMac": "electron-builder build --mac"
+    "justbuildForMac": "electron-builder build --mac",
+    "install": "npm install && cd client && npm install"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
