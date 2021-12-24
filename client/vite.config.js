@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import path from 'path';
+import styleImport from 'vite-plugin-style-import'
+import mpa from '@alife/vite-plugin-html-template-mpa';
+import reactRouter from '@viterjs/vite-plugin-react-router-config'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,7 +18,34 @@ export default defineConfig({
       },
     },
   },
-  plugins: [reactRefresh()],
+  plugins: [
+    reactRefresh(),
+    mpa({
+      mode: 'conventions',// 约定式模式
+      pagesDir: 'src/pages',// 页面位置
+      entryFileName: 'main.{js,ts,jsx,tsx}', // 入口文件名称
+      template: './public/index.html',// 模板位置
+    }),
+    reactRouter({
+      routes: [
+        { path: '/Home', component: './Home/App' },
+        { path: '/About', component: './About/App' },
+      ],// 路由配置
+      dynamicImport: true, // 动态加载路由
+      entryPath: './temp', // 入口文件生成路径
+    }),
+    styleImport({
+      libs: [
+        {
+          libraryName: 'antd',
+          esModule: true,
+          resolveStyle: (name) => {
+            return `/node_modules/antd/es/${name}/style/index`;
+          },
+        },
+      ],
+    }),
+  ],
   resolve: {
     alias: [
       // {
