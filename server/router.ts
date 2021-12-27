@@ -1,9 +1,8 @@
-const Router = require("koa-router");
+const Router = require('koa-router');
 const router = new Router();
 
-
-router.get("/(.*)", (ctx: any, next: Function) => {
-  if(require("electron-is-dev")){
+router.get('/(.*)', (ctx: any) => {
+  if (require('electron-is-dev')) {
     ctx.body = `
     <!DOCTYPE html>
     <html lang="en">
@@ -28,7 +27,10 @@ router.get("/(.*)", (ctx: any, next: Function) => {
     </html>
   `;
   } else {
-    const html = require("fs").readFileSync(require('path').resolve(__dirname, "../server/public/index.html"), { encoding: "utf8" });
+    const html = require('fs').readFileSync(
+      require('path').resolve(__dirname, '../server/public/index.html'),
+      { encoding: 'utf8' },
+    );
     const finalHtml = html.replace(/\/assets/g, '');
     ctx.body = finalHtml;
   }
